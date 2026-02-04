@@ -39,7 +39,8 @@ public class PrimaryDBConfig {
 				.packages("com.demo.db1.entity")
 				.build();
 	}
-	
+	@Primary
+	@Bean
 	public PlatformTransactionManager primaryTransactionManager(@Qualifier("primaryEntityManagerFactory") EntityManagerFactory emf) {
 		return new JpaTransactionManager(emf);
 	}
